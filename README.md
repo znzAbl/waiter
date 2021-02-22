@@ -1,6 +1,10 @@
 # waiter
 第三方支付接口组件
 
+安装
+
+composer require znzabl/waiter
+
 使用示例：
 ```php
 require_once('vendor/autoload.php');

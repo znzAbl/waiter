@@ -2,6 +2,7 @@
 第三方支付接口组件
 
 使用示例：
+```php
 require_once('vendor/autoload.php');
 
 use Waiter\Waiter;

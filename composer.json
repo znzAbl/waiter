@@ -1,0 +1,27 @@
+{
+    "name": "znzAbl/waiter",
+    "description": "A powerful WeChat Alipay interface application",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "znzAbl",
+            "email": "znz_abl@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "ext-openssl": "*",
+        "ext-openssl": "*",
+        "ext-simplexml":"*",
+        "ext-libxml": "*",
+        "ext-json": "*",
+        "ext-bcmath": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Waiter\\": "src"
+        }
+    },
+    "minimum-stability": "stable"
+}

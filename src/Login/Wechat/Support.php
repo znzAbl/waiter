@@ -71,4 +71,30 @@ class Support extends WechatFun implements LoginInterface
     {
 
     }
+
+    /**
+     * @param $encryptedData
+     * @param $iv
+     * @param $sessionKey
+     * @param $data
+     * @return bool
+     * @throws \Waiter\Exceptions\InvalidConfigException
+     */
+    public function decryptData($encryptedData, $iv, $sessionKey, &$data) : bool
+    {
+        $aesKey=base64_decode($sessionKey);
+        $aesIV=base64_decode($iv);
+        $aesCipher=base64_decode($encryptedData);
+        $result=openssl_decrypt( $aesCipher, "AES-128-CBC", $aesKey, 1, $aesIV);
+        $dataObj=json_decode( $result, true);
+
+        if($dataObj == NULL){
+            return false;
+        }
+        if($dataObj['watermark']['appid'] != Collection::get('config', 'app_id')){
+            return false;
+        }
+        $data = $dataObj;
+        return true;
+    }
 }

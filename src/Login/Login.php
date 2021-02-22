@@ -5,10 +5,12 @@ namespace Waiter\Login;
 
 use Waiter\Contracts\LoginInterface;
 use Waiter\Login\Wechat\Mini;
+use Waiter\Login\Wechat\Support;
 
 /**
  * Class Login
  * @method Mini Mini() 小程序登录
+ * @method Support Support() 其他方法
  * @package Waiter\Login
  */
 class Login

@@ -20,7 +20,7 @@ class WechatFun
             throw new \Exception('Get Wechat API Error:'.$result['errmsg']);
         }
 
-        if(!isset($result['return_code']) || $result['return_code'] != 'SUCCESS'){
+        if(!isset($result['return_code']) || $result['return_code'] != 'SUCCESS' || $result['result_code'] != 'SUCCESS'){
             throw new \Exception('Get Wechat API Error:'.($result['return_msg'] ?? $result['retmsg'] ?? ''));
         }
         return $result;

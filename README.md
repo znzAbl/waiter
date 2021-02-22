@@ -26,7 +26,12 @@ $parameter = [
     'notify_url'    => '你的回调地址',
 ];
 
-
+$encryptedData = 'zcdzcdasdcasdc';
+$iv            = 'asdcasddc';
+$sessionKey    = 'zsxcasdca';
+$data          = [];
+//微信解密秘文
+//Waiter::Wechat($config)->Login()->Support()->decryptData($encryptedData, $iv, $sessionKey, &$data);
 //微信小程序支付
 //$result = Waiter::Wechat($config)->Payment()->Mini()->pay($parameter);
 //var_dump($result);exit;
@@ -38,6 +43,7 @@ $config = [
     'app_id'        => '你的支付宝appid',
     'private_key'   => '你的支付宝私钥',
     'public_key'    => '你的支付宝公钥',
+    'aes_key'       => '你的密文解密密钥（解密密文时使用）',
     'mode'          => 'normal',
     'notify_url'    => '你的回调地址',
 ];
@@ -49,6 +55,9 @@ $parameter = [
     'total_amount'  => 0.01,
     'buyer_id'      => 2088302191714811,
 ];
+//支付宝解密秘文
+//$result = Waiter::Alipay($config)->Login()->Support()->decryptData('YpPx1DhmPFKfMWMUzzchE8rTRu7yFd44yVN+9+e/ITC+rIVD1OhwJ0Ts8USaRgPO9BIv5UkI40lVhKEeyFEpBA==');
+//var_dump($result);exit;
 //支付宝回调验证
 //$result = Waiter::Alipay($config)->Payment()->Support()->verify(['sign'=>'xzasdcasdc']);
 //var_dump($result);exit;

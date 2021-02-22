@@ -32,6 +32,7 @@ $sessionKey    = 'zsxcasdca';
 $data          = [];
 //微信解密秘文
 //Waiter::Wechat($config)->Login()->Support()->decryptData($encryptedData, $iv, $sessionKey, &$data);
+//var_dump($data);exit;
 //微信小程序支付
 //$result = Waiter::Wechat($config)->Payment()->Mini()->pay($parameter);
 //var_dump($result);exit;

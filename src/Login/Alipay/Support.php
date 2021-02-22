@@ -78,7 +78,7 @@ class Support extends AlipayFun implements LoginInterface
      * @param string $encryptedData
      * @return array
      */
-    public function decryptData(string $encryptedData) : array
+    public function decryptData(string $encryptedData)
     {
         $aesKey = Collection::get('config', 'aes_key');
         return json_decode(openssl_decrypt(base64_decode($encryptedData), 'AES-128-CBC', base64_decode($aesKey),OPENSSL_RAW_DATA), true);

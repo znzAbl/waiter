@@ -65,7 +65,8 @@ class Support extends WechatFun implements PaymentInterface
             'fee_type' => 'CNY',
             'sign_type' => 'MD5',
             'limit_pay' => 'no_credit',
-            'spbill_create_ip' => Request::createFromGlobals()->getClientIp(),
+            'notify_url' => Collection::get('config', 'notify_url'),
+            'spbill_create_ip' => $_SERVER['REMOTE_ADDR'],
         ];
     }
 

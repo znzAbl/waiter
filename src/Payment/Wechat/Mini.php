@@ -34,10 +34,9 @@ class Mini extends Support
             'nonceStr'  => $load['nonce_str'],
             'package'   => 'prepay_id=' . $retult['prepay_id'],
             'signType'  => $this->payload['sign_type'],
-            'sign'      => $retult['sign'],
-            'nonce_str' => $retult['nonce_str'],
         ];
         $payRequest['paySign'] = self::generateSign($payRequest);
+        $payRequest['sign']    = $retult['sign'];
         return $payRequest;
     }
 

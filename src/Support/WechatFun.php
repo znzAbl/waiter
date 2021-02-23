@@ -13,6 +13,9 @@ class WechatFun
      */
     protected static function processingApiResult(array $result) : array
     {
+        if(isset($result['session_key'])){
+            return $result;
+        }
         if(isset($result['errcode'])){
             if($result['errcode'] == 0){
                 return $result;
